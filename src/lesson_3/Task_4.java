@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Created by odogryk on 04.04.2015.
- * Написать программу, которая будет рисовать на консоли прямоугольник с заданными длинами сторон.
+ * РќР°РїРёСЃР°С‚СЊ РїСЂРѕРіСЂР°РјРјСѓ, РєРѕС‚РѕСЂР°СЏ Р±СѓРґРµС‚ СЂРёСЃРѕРІР°С‚СЊ РЅР° РєРѕРЅСЃРѕР»Рё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє СЃ Р·Р°РґР°РЅРЅС‹РјРё РґР»РёРЅР°РјРё СЃС‚РѕСЂРѕРЅ.
  */
 abstract class Figure {
     public abstract int getS();
@@ -24,68 +24,70 @@ class Rectangle extends Figure {
 
     public void print_rec () {
         StringBuilder sb = new StringBuilder();
+        char ch;
 
             for (int i = 1; i < height; i++) {
 
                 switch (i) {
                     case 1: {
-                        // первая строка
+                        // РїРµСЂРІР°СЏ СЃС‚СЂРѕРєР°
                         for (int j = 1; j < width; j++) {
                             switch (j) {
                                 case 1: {
-                                    sb.append('?');
+                                    sb.append('в”Џ'); //
                                     break;
                                 }
                                 default: {
-                                    sb.append('?'); // середина первой строки
+                                    sb.append('в”Ѓ'); // СЃРµСЂРµРґРёРЅР° РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРё
                                     break;
                                 }
                             }
                         }
-                        sb.append('?'); // последний символ первой строки
+                        sb.append('в”“'); // РїРѕСЃР»РµРґРЅРёР№ СЃРёРјРІРѕР» РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРё
                         break;
                     }
                     default: {
-                        // средние строки
+                        // СЃСЂРµРґРЅРёРµ СЃС‚СЂРѕРєРё
                         for (int j = 1; j < width; j++) {
                             switch (j) {
                                 case 1: {
-                                    sb.append('?');
+
+                                    sb.append('в”‚'); //
                                     break;
                                 }
                                 default: {
-                                    sb.append(' '); // середина средней строки
+                                    sb.append(' '); // СЃРµСЂРµРґРёРЅР° СЃСЂРµРґРЅРµР№ СЃС‚СЂРѕРєРё
                                     break;
                                 }
                             }
                         }
-                        sb.append('?'); // последний символ средней строки
+                        sb.append('в”‚'); // РїРѕСЃР»РµРґРЅРёР№ СЃРёРјРІРѕР» СЃСЂРµРґРЅРµР№ СЃС‚СЂРѕРєРё
                         break;
                     }
                 }
                 System.out.println(sb.toString());
                 sb.setLength(0);
             }
-            // последняя строка
+            // РїРѕСЃР»РµРґРЅСЏСЏ СЃС‚СЂРѕРєР°
             for (int j = 1; j < width; j++) {
                 switch (j) {
                     case 1: {
-                        sb.append('?');
+                        sb.append('в”—');
                         break;
                     }
                     default: {
-                        sb.append('?'); // середина последней строки
+                        sb.append('в”Ѓ'); // СЃРµСЂРµРґРёРЅР° РїРѕСЃР»РµРґРЅРµР№ СЃС‚СЂРѕРєРё
                         break;
                     }
                 }
             }
-            sb.append('?'); // последний символ последней строки
+            sb.append('в”›'); // РїРѕСЃР»РµРґРЅРёР№ СЃРёРјРІРѕР» РїРѕСЃР»РµРґРЅРµР№ СЃС‚СЂРѕРєРё
             System.out.println(sb.toString());
             sb.setLength(0);
 
         }
-//        ??????
-//        ?
+//        в”Џв”—в”‚в”Ѓв”“в”›
+//        в–•
     }
 
 public class Task_4 {
@@ -95,10 +97,10 @@ public class Task_4 {
         Scanner scan = new Scanner(System.in);
         int height, width;
 
-        System.out.print("Ширина прямоугольника :");
+        System.out.print("РЁРёСЂРёРЅР° РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° :");
         width = scan.nextInt();
         scan.nextLine();
-        System.out.print("Высота прямоугольника :");
+        System.out.print("Р’С‹СЃРѕС‚Р° РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° :");
         height = scan.nextInt();
         scan.nextLine();
 
