@@ -34,6 +34,11 @@ public class dz_1 {
                 paramString.delete(0, st.length()+1);
                 paramsCount++;
 // Java 7 don't work
+            } catch (SeparException|ValueException e) {
+                System.out.println(e.getMessage());
+                break;
+            }
+/*
             } catch (SeparException e) {
                 System.out.println(e.getMessage());
                 break;
@@ -42,6 +47,7 @@ public class dz_1 {
                 System.out.println(e.getMessage());
                 break;
             }
+*/
 
         }
     }
