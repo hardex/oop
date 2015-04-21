@@ -1,6 +1,7 @@
 package lesson_4.Monitor;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.nio.file.Files;
@@ -11,14 +12,16 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class Monitor {
+
 	String[] fileNames;
+	String fileExt;
 	IFileEvent event;
 	
 	public Monitor(String[] fileNames, IFileEvent event) {
 		this.fileNames = Arrays.copyOf(fileNames, fileNames.length);
 		this.event = event;
 	}
-	
+
 	public Monitor(String fileName, IFileEvent event) {
 		this.fileNames = new String[]{fileName};
 		this.event = event;
