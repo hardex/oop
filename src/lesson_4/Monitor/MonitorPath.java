@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class MonitorPath {
 
-    File searchPath;
+    File searchPath; // search directory
     String fileExt;
     String[] checkedFileNames;
     String[] currentFileNames;
@@ -36,8 +36,6 @@ public class MonitorPath {
             // ждем, пока не появится один из файлов в списке files[]
             while (!isFilePresent) {
                 currentFileNames = searchPath.list(new MyFileFilter(fileExt));
-
-//                System.out.print(Arrays.toString(currentFileNames));
 
                 for (String st : currentFileNames) {
                     int i = Arrays.binarySearch(checkedFileNames, st);
@@ -70,7 +68,6 @@ public class MonitorPath {
             }
 
             public boolean accept(File dir, String name) {
-//                System.out.println(dir + "|" + name);
                 return name.endsWith(ext);
             }
         }

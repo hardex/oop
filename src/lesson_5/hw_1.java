@@ -5,7 +5,12 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Main {
+/*
+1. Модифицировать проект FindFiles так, чтобы программа искала в
+		каталоге все файлы с расширениями из списка.
+*/
+
+public class hw_1 {
 
 	static class MyFileFilter implements FilenameFilter {
 		private String[] ext;
