@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 /**
  * Created by odogryk on 02.05.2015.
- * 3. Создать 100 потоков, каждый их которых выведет на экран свой номер и
- дождется, пока его прервут.
+ * 3. РЎРѕР·РґР°С‚СЊ 100 РїРѕС‚РѕРєРѕРІ, РєР°Р¶РґС‹Р№ РёС… РєРѕС‚РѕСЂС‹С… РІС‹РІРµРґРµС‚ РЅР° СЌРєСЂР°РЅ СЃРІРѕР№ РЅРѕРјРµСЂ Рё
+ РґРѕР¶РґРµС‚СЃСЏ, РїРѕРєР° РµРіРѕ РїСЂРµСЂРІСѓС‚.
  */
 public class hw_3 {
 
@@ -22,13 +22,13 @@ public class hw_3 {
         public void run() {
 
             System.out.println("Running thread Number : "+ tNumber);
-            while ( ! isInterrupted()) { // условие завершения потока №1
+            while ( ! isInterrupted()) { // СѓСЃР»РѕРІРёРµ Р·Р°РІРµСЂС€РµРЅРёСЏ РїРѕС‚РѕРєР° в„–1
                 try {
-                    Thread.sleep(1000); // закомментировать
-//                    Thread.yield(); // или так
+                    Thread.sleep(1000); // Р·Р°РєРѕРјРјРµРЅС‚РёСЂРѕРІР°С‚СЊ
+//                    Thread.yield(); // РёР»Рё С‚Р°Рє
                 } catch (InterruptedException e) {
                     System.out.println("Kill thread Number : "+ tNumber);
-                    return; // условие завершения потока №2
+                    return; // СѓСЃР»РѕРІРёРµ Р·Р°РІРµСЂС€РµРЅРёСЏ РїРѕС‚РѕРєР° в„–2
                 }
             }
             System.out.println("Stop thread Number : "+ tNumber);
@@ -43,11 +43,11 @@ public class hw_3 {
             Thread.sleep(2000); //
             for (int i = 0; i < 100; i++) {
                 mt[i] = new MyThread(i);
-                mt[i].start(); // запускаем поток
+                mt[i].start(); // Р·Р°РїСѓСЃРєР°РµРј РїРѕС‚РѕРє
             }
             Thread.sleep(2000); //
             for (int i = 0; i < 100; i++) {
-                mt[i].interrupt(); // прерываем поток
+                mt[i].interrupt(); // РїСЂРµСЂС‹РІР°РµРј РїРѕС‚РѕРє
             }
         } catch (Exception e) {
             System.out.println("Exception : "+e.getMessage());
