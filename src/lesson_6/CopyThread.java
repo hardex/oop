@@ -11,12 +11,19 @@ public class CopyThread extends Thread {
     int tNumber;
     RandomAccessFile in, out;
     volatile long seak;
+    byte[] fileBuff;
 
     public CopyThread (RandomAccessFile in, RandomAccessFile out, long seak) {
-//            this.tNumber = tNumber;
         this.in = in;
         this.out = out;
         this.seak = seak;
+    }
+
+    public CopyThread (RandomAccessFile in, RandomAccessFile out, long seak, byte[] fileBuff) {
+        this.in = in;
+        this.out = out;
+        this.seak = seak;
+        this.fileBuff = fileBuff;
     }
 
     @Override
